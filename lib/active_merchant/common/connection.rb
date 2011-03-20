@@ -24,12 +24,12 @@ module ActiveMerchant
   end
   
   class Connection
-    MAX_RETRIES = 3
-    OPEN_TIMEOUT = 60
-    READ_TIMEOUT = 60
-    VERIFY_PEER = true
-    RETRY_SAFE = false
-    RUBY_184_POST_HEADERS = { "Content-Type" => "application/x-www-form-urlencoded" }
+    MAX_RETRIES = 3 unless defined?(MAX_RETRIES)
+    OPEN_TIMEOUT = 60 unless defined?(OPEN_TIMEOUT)
+    READ_TIMEOUT = 60 unless defined?(READ_TIMEOUT)
+    VERIFY_PEER = true unless defined?(VERIFY_PEER)
+    RETRY_SAFE = false unless defined?(RETRY_SAFE)
+    RUBY_184_POST_HEADERS = { "Content-Type" => "application/x-www-form-urlencoded" } unless defined?(RUBY_184_POST_HEADERS)
   
     attr_accessor :endpoint
     attr_accessor :open_timeout
